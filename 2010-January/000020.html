@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Delilinux-user] Building in a Clean Chroot
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/delilinux-user/2010-January/index.html" >
+   <LINK REL="made" HREF="mailto:delilinux-user%40lists.berlios.de?Subject=Re%3A%20%5BDelilinux-user%5D%20Building%20in%20a%20Clean%20Chroot&In-Reply-To=%3C1263122905.25653.13.camel%40localhost.localdomain%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000021.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Delilinux-user] Building in a Clean Chroot</H1>
+    <B>Damjan Dimitrioski</B> 
+    <A HREF="mailto:delilinux-user%40lists.berlios.de?Subject=Re%3A%20%5BDelilinux-user%5D%20Building%20in%20a%20Clean%20Chroot&In-Reply-To=%3C1263122905.25653.13.camel%40localhost.localdomain%3E"
+       TITLE="[Delilinux-user] Building in a Clean Chroot">damjandimitrioski at gmail.com
+       </A><BR>
+    <I>Sun Jan 10 12:28:25 CET 2010</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000021.html">[Delilinux-user] deli in virtualbox
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#20">[ date ]</a>
+              <a href="thread.html#20">[ thread ]</a>
+              <a href="subject.html#20">[ subject ]</a>
+              <a href="author.html#20">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+I'm using ArchLinux on my computer, but recently I installed DeliLinux
+on my parents computer (which is ancient), now I want to be able to
+build packages in a clean chroot environment via my ArchLinux, reason
+for this is I can't use my ArchLinux packages on DeliLinux althought
+they're pacman compatible.
+(The errors are: file not found when I try to execute the binaries, e.g&gt;
+-bash: /usr/bin/xarchiver: No such file or directory)
+
+So how to setup the clean chroot?
+This is what I do for ArchLinux&gt;
+sudo mkarchroot &lt;chrootdir&gt;/root base base-devel sudo
+(<A HREF="http://wiki.archlinux.org/index.php/DeveloperWiki:Building_in_a_Clean_Chroot#Prerequisites">http://wiki.archlinux.org/index.php/DeveloperWiki:Building_in_a_Clean_Chroot#Prerequisites</A>)
+
+I think it should be like this&gt;
+sudo mkarchroot -C &lt;deli/pacman.conf&gt; -M &lt;deli/makepkg.conf&gt;
+&lt;chrootdir&gt;/root current
+where deli is a folder with the custom conf files, am I correct ?
+
+-- 
+ Sincerely,
+ Damjan Dimitrioski.
+ 
+ -- 
+ Use GNU/Linux change your life.
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 198 bytes
+Desc: This is a digitally signed message part
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/delilinux-user/attachments/20100110/c88fccd0/attachment.pgp">https://lists.berlios.de/pipermail/delilinux-user/attachments/20100110/c88fccd0/attachment.pgp</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000021.html">[Delilinux-user] deli in virtualbox
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#20">[ date ]</a>
+              <a href="thread.html#20">[ thread ]</a>
+              <a href="subject.html#20">[ subject ]</a>
+              <a href="author.html#20">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/delilinux-user">More information about the Delilinux-user
+mailing list</a><br>
+</body></html>

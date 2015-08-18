@@ -1,0 +1,130 @@
+From 2036 at gmx.de  Fri Jan 26 19:42:18 2007
+From: 2036 at gmx.de (Jan)
+Date: Fri, 26 Jan 2007 19:42:18 +0100
+Subject: [Delilinux-user] How to install DeLi-32 ? (tutorial for
+	linux-beginners)
+Message-ID: <45BA4B8A.7070407@gmx.de>
+
+Hello!
+
+I would like to install DeLi-32 on an old PC with 500 Mhz, 64 MB RAM, 12 GB HD.
+
+It should be used by a really beginner only th surf the web.
+
+Im not very expericened with installing linux; I read this about DeLi-32, but I 
+dont know how to install it ... I only find files for the 3 applications.
+
+Is there any iso-file for DeLi-32, which I can burn to a bootable-CD, which runs 
+an setup on startup?
+
+Thanks,
+Nyks
+
+
+From hjensen at delilinux.de  Mon Jan 29 07:57:14 2007
+From: hjensen at delilinux.de (Henry Jensen)
+Date: Mon, 29 Jan 2007 06:57:14 +0000
+Subject: [Delilinux-user] How to install DeLi-32 ? (tutorial for
+	linux-beginners)
+In-Reply-To: <45BA4B8A.7070407@gmx.de>
+References: <45BA4B8A.7070407@gmx.de>
+Message-ID: <20070129065714.GA114@jensen.local>
+
+Hello,
+
+On Fri, Jan 26, 2007 at 07:42:18PM +0100, Jan wrote:
+> I would like to install DeLi-32 on an old PC with 500 Mhz, 64 MB RAM, 12 GB HD.
+> It should be used by a really beginner only th surf the web.
+> Im not very expericened with installing linux; I read this about DeLi-32, but I 
+> dont know how to install it ... I only find files for the 3 applications.
+
+
+It seems there is a misunderstanding. Deli-32 is not a seperate distribution, it's just a 
+software repository fpr computers with at least 32 MB RAM, see http://delili.lens.hl-users.com/wiki/doku.php?id=software:deli-32.
+
+If you want to install software packages from the DeLi-32 repository you have to install DeLi in the
+first place. For installation see http://delili.lens.hl-users.com/wiki/doku.php?id=installation:cdrom
+
+Regards,
+
+Henry
+
+who wishes that people would recognize the wiki, it's not that hard to find...
+
+
+
+From sparkfist at gmail.com  Mon Jan 29 16:01:03 2007
+From: sparkfist at gmail.com (Nick K)
+Date: Mon, 29 Jan 2007 10:01:03 -0500
+Subject: [Delilinux-user] Delilinux installation
+Message-ID: <6d2523720701290701q5ade57cha40c4130db748c5c@mail.gmail.com>
+
+Hi, I don't know what kind of changes have been made in the install process
+since I used version 0.6,
+but it's not hard at all. If you read the FAQ, Also about only seeing 3
+items, did you just burn the file
+to a CD or did you make it from a CD image? Another thing is that if your
+system doesn't boot the CD
+it's self you'll likely have that result. And follow what's being asked from
+the install process you
+can figure it out. As for surfing the web, again I don't know what changes
+have been done since but
+you'll likely have to download the browser, though getting something like
+Firefox shouldn't be hard.
+
+
+Message: 1
+> Date: Mon, 29 Jan 2007 06:57:14 +0000
+> From: Henry Jensen <hjensen at delilinux.de>
+> Subject: Re: [Delilinux-user] How to install DeLi-32 ? (tutorial for
+>         linux-beginners)
+> To: delilinux-user at lists.berlios.de
+> Message-ID: <20070129065714.GA114 at jensen.local>
+> Content-Type: text/plain; charset=iso-8859-15
+>
+> Hello,
+>
+> On Fri, Jan 26, 2007 at 07:42:18PM +0100, Jan wrote:
+> > I would like to install DeLi-32 on an old PC with 500 Mhz, 64 MB RAM, 12
+> GB HD.
+> > It should be used by a really beginner only th surf the web.
+> > Im not very expericened with installing linux; I read this about
+> DeLi-32, but I
+> > dont know how to install it ... I only find files for the 3
+> applications.
+>
+>
+> It seems there is a misunderstanding. Deli-32 is not a seperate
+> distribution, it's just a
+> software repository fpr computers with at least 32 MB RAM, see
+> http://delili.lens.hl-users.com/wiki/doku.php?id=software:deli-32.
+>
+> If you want to install software packages from the DeLi-32 repository you
+> have to install DeLi in the
+> first place. For installation see
+> http://delili.lens.hl-users.com/wiki/doku.php?id=installation:cdrom
+>
+> Regards,
+>
+> Henry
+>
+> who wishes that people would recognize the wiki, it's not that hard to
+> find...
+>
+>
+>
+> ------------------------------
+>
+> _______________________________________________
+> Delilinux-user mailing list
+> Delilinux-user at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/delilinux-user
+>
+>
+> End of Delilinux-user Digest, Vol 6, Issue 2
+> ********************************************
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/delilinux-user/attachments/20070129/3dc92564/attachment.html>
+

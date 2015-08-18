@@ -1,0 +1,14 @@
+From andreythinking at gmail.com  Fri Aug 24 00:33:17 2007
+From: andreythinking at gmail.com (AndreyThinking)
+Date: Thu, 23 Aug 2007 18:33:17 -0400
+Subject: [Delilinux-user] How about cyrillic/russian language in DeLi Linux ?
+Message-ID: <41dbe5500708231533l2a745960ifa7f422861b4f30d@mail.gmail.com>
+
+Hello, all.
+Is DeLi Linux support cyrillic characters for console, keyboard,
+X-server (not in interface, but in documents body etc.) ?
+
+-- 
+Best regards, Andrey
+
+

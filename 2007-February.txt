@@ -1,0 +1,89 @@
+From sunny0815 at gmxpro.de  Sun Feb 11 18:09:05 2007
+From: sunny0815 at gmxpro.de (Matthias Sommer)
+Date: Sun, 11 Feb 2007 18:09:05 +0100
+Subject: [Delilinux-user] howto install deli without CD and USB
+Message-ID: <45CF4DB1.3040709@gmxpro.de>
+
+Hello
+
+I'm planning to re-use my ancient notebook for a small linux installation.
+The prombelm is, this notebook has no CD-ROM and no USB.
+Can I install deli linux to this machine? And if so, how do I do this?
+I read something about installing with a boot floppy via parallel or 
+serial port, but I cannot find the mentioned files on the Website or on 
+the downloaded CD image 0.7.1.
+Did this method work only for older versions? If so, is it possible to 
+dowload such an older version somwhere?
+
+Regards
+Matthias
+
+
+
+From jhansonxi at gmail.com  Sun Feb 11 19:56:17 2007
+From: jhansonxi at gmail.com (Jeff Hanson)
+Date: Sun, 11 Feb 2007 13:56:17 -0500
+Subject: [Delilinux-user] howto install deli without CD and USB
+In-Reply-To: <b02c40e90702111055n40233b04x58c5bc9910c5e947@mail.gmail.com>
+References: <45CF4DB1.3040709@gmxpro.de>
+	<b02c40e90702111055n40233b04x58c5bc9910c5e947@mail.gmail.com>
+Message-ID: <b02c40e90702111056u3f5348a9g4931be0cc65af14a@mail.gmail.com>
+
+I've never done it but I think SLIP or PLIP can be used:
+http://en.wikipedia.org/wiki/Direct_cable_connection
+http://stefan.desire.ch/howto/tcpip-nullmodem/
+http://www.tldp.org/HOWTO/PLIP-Install-HOWTO.html
+
+On 2/11/07, Matthias Sommer <sunny0815 at gmxpro.de> wrote:
+> Hello
+>
+> I'm planning to re-use my ancient notebook for a small linux installation.
+> The prombelm is, this notebook has no CD-ROM and no USB.
+> Can I install deli linux to this machine? And if so, how do I do this?
+> I read something about installing with a boot floppy via parallel or
+> serial port, but I cannot find the mentioned files on the Website or on
+> the downloaded CD image 0.7.1.
+> Did this method work only for older versions? If so, is it possible to
+> dowload such an older version somwhere?
+>
+> Regards
+> Matthias
+>
+> _______________________________________________
+> Delilinux-user mailing list
+> Delilinux-user at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/delilinux-user
+>
+
+
+From hjensen at delilinux.de  Mon Feb 12 12:19:22 2007
+From: hjensen at delilinux.de (Henry Jensen)
+Date: Mon, 12 Feb 2007 11:19:22 +0000
+Subject: [Delilinux-user] howto install deli without CD and USB
+In-Reply-To: <45CF4DB1.3040709@gmxpro.de>
+References: <45CF4DB1.3040709@gmxpro.de>
+Message-ID: <20070212111922.GA85@jensen.local>
+
+Hello,
+
+On Sun, Feb 11, 2007 at 06:09:05PM +0100, Matthias Sommer wrote:
+
+
+
+> I'm planning to re-use my ancient notebook for a small linux installation.
+> The prombelm is, this notebook has no CD-ROM and no USB.
+> Can I install deli linux to this machine? And if so, how do I do this?
+> I read something about installing with a boot floppy via parallel or 
+> serial port, but I cannot find the mentioned files on the Website or on 
+> the downloaded CD image 0.7.1.
+> Did this method work only for older versions? If so, is it possible to 
+> dowload such an older version somwhere?
+
+See http://delili.lens.hl-users.com/wiki/doku.php?id=devel:installdisks
+
+Regards,
+
+Henry
+
+
+

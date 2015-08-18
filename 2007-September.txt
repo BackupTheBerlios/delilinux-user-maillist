@@ -1,0 +1,275 @@
+From shuo45241 at yahoo.com  Mon Sep  3 07:17:39 2007
+From: shuo45241 at yahoo.com (Shuo Chen)
+Date: Sun, 2 Sep 2007 22:17:39 -0700 (PDT)
+Subject: [Delilinux-user] How do I add support for ISA modem?
+Message-ID: <263444.66897.qm@web54503.mail.re2.yahoo.com>
+
+I want to use DeLi Linux on a Packard Bell computer. I
+got it to install fine. But what good is it if I can't
+connect to the Internet? I want to use the internal
+modem. I think it is ISA. How do I get it to detect
+it?  Is there even a driver for such a old WinModem? I
+tried pnpdump but it didn't work. I also tried the
+wvdialconf command written below, but DeLi Linux
+doesn't seem to have this command yet. And the
+scanModem.gz seemed to hang after a grep command to
+the screen and complained about an old device.
+Modem.txt still printed out though. Please see below
+for my modem model. I heard I should also run
+isapnptools and use a "set" command to explicitly
+state the COM and IRQ, but am not sure how to do that.
+
+Sorry about the length of my post.
+
+Shuo
+
+-----------------------------
+ORIGINAL MESSAGE FROM DISCUSS at linmodems.org
+
+
+Shuo
+
+RE: Packard Bell 14.4AM(SP) Modem Soundcard.
+Identifier: GVC_Modem18
+This is quote old hardware, with possible an old
+Controller Chipset
+ modem
+
+If wvdial is installed on your System, try modem
+detection with
+$ su - root
+# wvdialconf  /etc/wvdial.conf
+
+If not you can try interrogating the /dev/ttyS0 to 3
+ports with
+whatever COMM tooles are provided in DeLi  Linux
+
+MarvS
+scanModem maintainer
+
+On 9/1/07, Shuo Chen <shuo45241 at yahoo.com> wrote:
+> This is my first report. Can I use my modem with
+DeLi
+> Linux? See below:
+>
+>  Only plain text email is forwarded by the
+> DISCUSS at linmodems.org List Server.
+>  Do use the following as the email Subject Line:
+>            SomeName, YourCountry This is DeLi Linux
+> 0.7.2 beta ( kernel 2.4.34.4
+>  This will alert cogent experts, and  distinguish
+> cases in the Archives.
+>  YourCountry will enable Country Code guidance.
+>  Occassionally responses are blocked by an Internet
+> Provider mail filters.
+>  So in a day, also check the Archived responses at
+> http://www.linmodems.org .
+>  Local Linux experts can be found through:
+> http://www.linux.org/groups/index.html
+> --------------------------  System information
+> ----------------------------
+> CPU=i586,  This is DeLi Linux 0.7.2 beta (
+> Linux version 2.4.34.4 (root at deli) (gcc version
+3.3.6)
+> #1 Mon Mai 7 14:43:42 UTC 2007
+>  scanModem update of:  2007_August_28
+>
+>
+>  There are no blacklisted modem drivers in
+> /etc/modprobe*  files
+>    /proc/bus/usb/devices file not present, barring
+USB
+> modem query.
+>
+> Modem or candidate host audio card have firmware
+> information and diagnostics:
+>
+>  === Finished modem firmware and bootup diagnostics
+> section. ===
+>  === Next deducing cogent software ===
+>
+>
+>         A modem was not detected among the PCI
+devices:
+> ------------------------------------------------
+> 00:08.0 VGA compatible controller: Cirrus Logic GD
+> 5430/40 [Alpine] (rev 47)
+> ------------------------------------------------
+>  with USB and bridge devices not displayed.
+>  Please provide any independent information
+available
+> on your modem.
+>
+>         If your modem is mounted on an ISA card,
+scanModem
+> could not access it.
+>         If an alternative boot into Microsoft
+windows can be
+> done, do mouse
+> clicks on:
+>    Start > Settings > Control Panel > Classical View
+> (for Window XP) > System
+> > Hardware > Device Manager > Modems > Click on the
++
+> > Modem. Double click to
+> expand the graphic. Manufacturer information may be
+> displayed. For example, CXT
+> stands for Conexant. Click the Diagnostics Tab.
+Record
+> any hardware ID or vendor
+> and device information.
+> Next do the Query Modem and record the ATI
+> specifications displayed such as:
+>     ATI3 - Agere SoftModem Version 2.1.22
+>     ATI5 - 2.1.22, AMR Intel MB, AC97 ID:SIL
+REV:0x27
+> Try to identify the modem setup file, with name
+> perhaps MODEM.INF.
+> If may contain chipset Vendor informaton.
+>
+>  Completed candidate modem analyses.
+>
+>  A UDEV device file system is not active.
+>
+>  Versions adequately match for the compiler
+installed:
+> 3.3.6
+>              and the compiler used in kernel
+assembly:
+> 3.3.6
+>
+>  linux-headers-2.4.34.4 resources needed for
+compiling
+> are not manifestly ready!
+>
+>  If compiling is necessary packages must be
+installed,
+> providing:
+>          kernel-source-2.4.34.4
+>
+>
+> If a driver compilation files with message including
+> some lack of some FileName.h (stdio.h for example.
+> Some additional kernel-header files need
+installation
+> to /usr/include.
+> For Debian/Ubuntu related distributions, run the
+> following command to display the needed package
+list:
+> $ sudo apt-get -s install linux-kernel-devel
+> While some of the files may be on the install CD,
+> others may have to be found through
+> http://packages.ubuntu.com
+>
+> For Ubuntu Feisty, additional packages required
+were:
+>  libc6-dev linux-libc-dev
+> available through http://packages.ubuntu.com/ , if
+not
+> on the install CD.
+> Such packages may have different names for other
+Linux
+> distributions.
+> Try installing just the libc6-dev, then test the
+> compile again.
+>
+>
+> Checking pppd properties:
+>         -rwxr-xr-x 1 root root 224880 2006-09-14
+21:58
+> /usr/sbin/pppd
+>
+> In case of an "error 17" "serial loopback" problem,
+> see:
+>
+>
+http://phep2.technion.ac.il/linmodems/archive-sixth/msg02637.html
+>
+> To enable dialout without Root permission do:
+>         $ su - root  (not for Ubuntu)
+>          chmod a+x /usr/sbin/pppd
+> or under Ubuntu related Linuxes
+>          chmod a+x /usr/sbin/pppd
+>
+> Checking settings of:   /etc/ppp/options
+> lock
+> defaultroute
+> noipdefault
+> modem
+> usepeerdns
+> /dev/ttyS1
+> 115200
+> crtscts
+> debug
+> passive
+> asyncmap 0
+>
+> In case of a message like:
+>    Warning: Could not modify /etc/ppp/pap-secrets:
+> Permission denied
+> see
+>
+http://linmodems.technion.ac.il/bigarch/archive-sixth/msg04656.html
+>
+>
+>  Don't worry about the following, it is for the
+> experts
+>  should trouble shooting be necessary.
+>
+==========================================================
+>
+> Windows 95 Diagnostics Report:
+>
+> Port Information
+Port: COM1
+Interrupt: 4
+Address: 3F8
+> UART: NFS 16550AN
+> Highest Speed: 115K Baud
+>
+> Packard Bell 14.4AM(SP) Modem Soundcard
+> Identifier: GVC_Modem18
+> COMMAND         RESPONSE
+> ATI1            255
+> ATI2            OK
+> ATI3            v2.200E-ACF/ATF_DP Rockwell RPI(TM)
+>
+> MODEM+01
+>
+> ATI4            a007880284C6002F
+> ATI4            bC60000000
+> ATI4            r1005111151012004
+> ATI4            r3000111170000000
+> ATI5            022
+> ATI6            RCV144DPG Rev
+> ATI7            000
+> ATI+FCLASS=?    0,1,80
+>
+> --------------------------------
+>
+> Written on the Board
+> RCV244ACF-P
+> Rockwell 95
+> R6725-11
+> 9546 A78959-3
+> Mexico
+>
+> ANALOG DEVICES
+> AD1845JP
+> SoundPort
+> 9548
+> 25324280
+>
+> AZTECH
+> AT2316R
+> AZTECH SYSTEMS
+> R2
+> 5360
+
+
+       
+____________________________________________________________________________________
+Looking for a deal? Find great prices on flights and hotels with Yahoo! FareChase.
+http://farechase.yahoo.com/
+
+

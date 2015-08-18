@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Delilinux-user] Problem writing the MBR
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/delilinux-user/2007-April/index.html" >
+   <LINK REL="made" HREF="mailto:delilinux-user%40lists.berlios.de?Subject=Re%3A%20%5BDelilinux-user%5D%20Problem%20writing%20the%20MBR&In-Reply-To=%3C200704162240.47916.znnse%40schlagzeug%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000011.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Delilinux-user] Problem writing the MBR</H1>
+    <B>Wagner Michael</B> 
+    <A HREF="mailto:delilinux-user%40lists.berlios.de?Subject=Re%3A%20%5BDelilinux-user%5D%20Problem%20writing%20the%20MBR&In-Reply-To=%3C200704162240.47916.znnse%40schlagzeug%3E"
+       TITLE="[Delilinux-user] Problem writing the MBR">znnse at wagnertech.de
+       </A><BR>
+    <I>Mon Apr 16 22:40:47 CEST 2007</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000011.html">[Delilinux-user] deli linux
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10">[ date ]</a>
+              <a href="thread.html#10">[ thread ]</a>
+              <a href="subject.html#10">[ subject ]</a>
+              <a href="author.html#10">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello,
+
+here in detail. what i did:
+--
+LILO (linux Loader) is a generic boot loader. There's a simple
+installation which tries to automatically set up LILO to boot
+Linux (also Windows if found). For more advanced users, the 
+expert option offers more control over the installation
+process. Since LILO does not work in all cases (ald can damage
+partitions if incorrectly installed), there's the third (save)
+option, which is to skip installing LILO for now and you con 
+always install it later with the 'liloconfig' command.
+
+-&gt; simple
+
+LILO can be installed to a variety of places:
+1) The superblock of your root Linux partition. (which could
+   be made the bootable partition with Windows or Linux fdisk, or
+   booted with a programm like OS/2 Boot Manager)
+2) A formatted floppy disk.
+3) The Master Boot record of your first hard drive.
+Options 1 and 2 are the safest, but option 1 does require a little
+extra work later (setting the partition bootable with fdisk).
+which option would you like?
+
+-&gt; Root
+
+Sorry, but the attempt to install LILO has returned an
+error, so LILO has not been correctly instlalled. You'll 
+have to use a bootdisk to start your machine instead.
+It should still be possible to get LILO working by
+editing the /etc/lilo.conf and reinstalling LILO
+manually. See the LILO man page and documentation in
+/usr/doc/lilo for more help.
+--
+
+So, how can i boot this system and how can i try to
+make my disk bootable?
+
+Thanks for help,
+
+Michael.
+
+Am Samstag, 31. M&#228;rz 2007 16:13 schrieben Sie:
+&gt;<i> Hello
+</I>&gt;<i>
+</I>&gt;<i> What do you mean by, you couldn't save the MBR?
+</I>&gt;<i> Did it get overwritten again?
+</I>&gt;<i>
+</I>&gt;<i> I've heard of some BIOS which protect their MBR, 'cause it could be a virus
+</I>&gt;<i> which deletes it..or something in that way. Take a look at the BIOS. You
+</I>&gt;<i> could also use, I think it's called &quot;SmartBoot&quot; or something in that way.
+</I>&gt;<i> It's a bootmanager on a floppy.
+</I>&gt;<i>
+</I>&gt;<i> Rob
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> -------- Original-Nachricht --------
+</I>&gt;<i> Datum: Fri, 30 Mar 2007 23:23:23 +0200
+</I>&gt;<i> Von: Michael Wagner &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/delilinux-user">znnse at wagnertech.de</A>&gt;
+</I>&gt;<i> An: <A HREF="https://lists.berlios.de/mailman/listinfo/delilinux-user">delilinux-user at lists.berlios.de</A>
+</I>&gt;<i> Betreff: [Delilinux-user] Problem writing the MBR
+</I>&gt;<i>
+</I>&gt;<i> &gt; Hello,
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; up to now i installed DeLi on different machines. And it worked fine. But
+</I>&gt;<i> &gt; trying to install it on an old Siemens Mobile 360 i could not save the
+</I>&gt;<i> &gt; MBR.
+</I>&gt;<i> &gt; What can i try to do?
+</I>&gt;<i> &gt; Is there a possibility to boot the DiLi written to disk by another way
+</I>&gt;<i> &gt; (floppy)?
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Thanks for help!
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Michael.
+</I>&gt;<i> &gt; --
+</I>&gt;<i> &gt; Michael J.M. Wagner
+</I>&gt;<i> &gt; Gleiwitzer Str. 28
+</I>&gt;<i> &gt; 81929 M&#252;nchen
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; _______________________________________________
+</I>&gt;<i> &gt; Delilinux-user mailing list
+</I>&gt;<i> &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/delilinux-user">Delilinux-user at lists.berlios.de</A>
+</I>&gt;<i> &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/delilinux-user">https://lists.berlios.de/mailman/listinfo/delilinux-user</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000011.html">[Delilinux-user] deli linux
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10">[ date ]</a>
+              <a href="thread.html#10">[ thread ]</a>
+              <a href="subject.html#10">[ subject ]</a>
+              <a href="author.html#10">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/delilinux-user">More information about the Delilinux-user
+mailing list</a><br>
+</body></html>

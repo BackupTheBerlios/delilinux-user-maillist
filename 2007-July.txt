@@ -1,0 +1,29 @@
+From p.imbemba at gmail.com  Sun Jul  1 20:19:53 2007
+From: p.imbemba at gmail.com (Pasquale Imbemba)
+Date: Sun, 1 Jul 2007 20:19:53 +0200
+Subject: [Delilinux-user] [Beginner] Internal PCI Modem setup & general
+	questions
+Message-ID: <93b1a1580707011119k74391302qf528a242a43ba62d@mail.gmail.com>
+
+Hi,
+
+first of all congratulations to those who made Delilinux: I've successfully
+installed it with no trouble on an old Pentium I, 233 MHz with 64 Megs of
+RAM. It's the (old) PC of my sister and she complained Win98 was just too
+slow.
+Now Delilinux runs very well!
+
+One thing I could not figure out is: how do I setup the remaining hardware
+like the internal PCI modem? Under suSE and ubuntu there're visual control
+center tools like yast and the like.
+
+I would need to configure modem and sound card. How do I add other users?
+Must I still do this by bash or is there a GUI "control center" available
+somewhere?
+
+Thanks in advance
+Pasquale
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/delilinux-user/attachments/20070701/a8b8c1b7/attachment.html>
+

@@ -1,0 +1,103 @@
+From niall at ve7hex.ampr.org  Mon Oct 22 08:35:06 2007
+From: niall at ve7hex.ampr.org (Niall Parker)
+Date: Sun, 21 Oct 2007 23:35:06 -0700
+Subject: [Delilinux-user] xastir ?
+Message-ID: <471C449A.7070701@ve7hex.ampr.org>
+
+Hello,
+
+Has anyone successfully compiled xastir (an amateur radio tracking 
+application) under Deli ? I've tried a few ways and it seems to fail on 
+linking, perhaps imcompatibility with the libc ?
+
+Any pointers appreciated, thanks.
+
+					... Niall
+
+
+From niall at ve7hex.ampr.org  Mon Oct 22 19:49:01 2007
+From: niall at ve7hex.ampr.org (Niall Parker)
+Date: Mon, 22 Oct 2007 10:49:01 -0700
+Subject: [Delilinux-user] xastir ?
+In-Reply-To: <1193045828.5673.1.camel@Speiser-Zenz>
+References: <471C449A.7070701@ve7hex.ampr.org>
+	<1193045828.5673.1.camel@Speiser-Zenz>
+Message-ID: <471CE28D.5020301@ve7hex.ampr.org>
+
+Robert Zenz wrote:
+> Hello.
+> 
+> I've never compiled something under Deli, but could you post the output
+> of the makefile, maybe there's a clue.
+
+See below, this is the tail of a basic ./configure followed by make.
+
+[....]
+
+if gcc -DHAVE_CONFIG_H -I. -I. -I..   -I../src/shapelib 
+-DXASTIR_DATA_BASE=\"/usr/local/share/xastir\"  -g -O2 -pipe -W -Wall 
+-Wpointer-arith -Wstrict-prototypes -Wno-unused-parameter -pthread -MT 
+compiledate.o -MD -MP -MF ".deps/compiledate.Tpo" -c -o compiledate.o 
+compiledate.c; \
+then mv -f ".deps/compiledate.Tpo" ".deps/compiledate.Po"; else rm -f 
+".deps/compiledate.Tpo"; exit 1; fi
+gcc  -g -O2 -pipe -W -Wall -Wpointer-arith -Wstrict-prototypes 
+-Wno-unused-parameter -pthread  -o xastir  alert.o awk.o bulletin_gui.o 
+color.o datum.o db.o db_gis.o dbfawk.o draw_symbols.o fcc_data.o 
+festival.o geo-find.o geocoder_gui.o gps.o hashtable.o hashtable_itr.o 
+hostname.o igate.o interface.o interface_gui.o io-common.o io-mmap.o 
+lang.o list_gui.o locate_gui.o location.o location_gui.o main.o maps.o 
+map_cache.o map_dos.o map_gdal.o map_geo.o map_gnis.o map_pdb.o 
+map_shp.o map_tif.o map_tiger.o map_WMS.o messages.o messages_gui.o 
+objects.o popup_gui.o rac_data.o rotated.o rpl_malloc.o shp_hash.o 
+snprintf.o sound.o track_gui.o util.o view_message_gui.o wx.o wx_gui.o 
+x_spider.o xa_config.o compiledate.o -Lrtree -lrtree -Lshapelib -lshape 
+-lXm -lXt -lX11 -lintl -lrt -lXm -lXt -lXp -lXext -lm -lSM -lICE -lX11
+x_spider.o: In function `init_set_proc_title':
+/home/niall/xastir-1.9.1/src/x_spider.c:843: undefined reference to 
+`__progname_full'
+collect2: ld returned 1 exit status
+make[3]: *** [xastir] Error 1
+make[3]: Leaving directory `/home/niall/xastir-1.9.1/src'
+make[2]: *** [all-recursive] Error 1
+make[2]: Leaving directory `/home/niall/xastir-1.9.1/src'
+make[1]: *** [all-recursive] Error 1
+make[1]: Leaving directory `/home/niall/xastir-1.9.1'
+make: *** [all] Error 2
+$
+
+
+From niall at ve7hex.ampr.org  Mon Oct 22 21:03:43 2007
+From: niall at ve7hex.ampr.org (Niall Parker)
+Date: Mon, 22 Oct 2007 12:03:43 -0700
+Subject: [Delilinux-user] xastir ? ... solved
+In-Reply-To: <1193077398.18180.2.camel@Speiser-Zenz>
+References: <471C449A.7070701@ve7hex.ampr.org>
+	<1193045828.5673.1.camel@Speiser-Zenz>
+	<471CE28D.5020301@ve7hex.ampr.org>
+	<1193077398.18180.2.camel@Speiser-Zenz>
+Message-ID: <471CF40F.3080700@ve7hex.ampr.org>
+
+Robert Zenz wrote:
+> That's odd, I didn't try to compile it but I had a look at the
+> x_spider.c, and there is nothing at the line 843 except for a comment.
+> But two lines below is the mentioned variable __progname_full. Are you
+> sure you have the latest code? If not, grab it from sourceforge...maybe
+> that's it...broken release.
+
+I grabbed the latest and tried again, same problem, then I decided to 
+remove the lines in question in x_spider (the logic in the preprocessor 
+defines seemed to imply it was trying to account for a non LSB 
+distribution, not sure whether it really applied to Deli)
+
+It linked OK and seems to work (at least I get map display etc), now 
+I'll try building in the various options and see how the radio 
+interfaces work.
+
+Thanks for the suggestions, I had gotten stuck on assuming the problem 
+was a library issue with uClibc when it seems to have been a little 
+piece of untested code.
+
+					... Niall
+
+

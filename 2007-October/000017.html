@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Delilinux-user] xastir ?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/delilinux-user/2007-October/index.html" >
+   <LINK REL="made" HREF="mailto:delilinux-user%40lists.berlios.de?Subject=Re%3A%20%5BDelilinux-user%5D%20xastir%20%3F&In-Reply-To=%3C471CE28D.5020301%40ve7hex.ampr.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000016.html">
+   <LINK REL="Next"  HREF="000018.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Delilinux-user] xastir ?</H1>
+    <B>Niall Parker</B> 
+    <A HREF="mailto:delilinux-user%40lists.berlios.de?Subject=Re%3A%20%5BDelilinux-user%5D%20xastir%20%3F&In-Reply-To=%3C471CE28D.5020301%40ve7hex.ampr.org%3E"
+       TITLE="[Delilinux-user] xastir ?">niall at ve7hex.ampr.org
+       </A><BR>
+    <I>Mon Oct 22 19:49:01 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000016.html">[Delilinux-user] xastir ?
+</A></li>
+        <LI>Next message: <A HREF="000018.html">[Delilinux-user] xastir ? ... solved
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#17">[ date ]</a>
+              <a href="thread.html#17">[ thread ]</a>
+              <a href="subject.html#17">[ subject ]</a>
+              <a href="author.html#17">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Robert Zenz wrote:
+&gt;<i> Hello.
+</I>&gt;<i> 
+</I>&gt;<i> I've never compiled something under Deli, but could you post the output
+</I>&gt;<i> of the makefile, maybe there's a clue.
+</I>
+See below, this is the tail of a basic ./configure followed by make.
+
+[....]
+
+if gcc -DHAVE_CONFIG_H -I. -I. -I..   -I../src/shapelib 
+-DXASTIR_DATA_BASE=\&quot;/usr/local/share/xastir\&quot;  -g -O2 -pipe -W -Wall 
+-Wpointer-arith -Wstrict-prototypes -Wno-unused-parameter -pthread -MT 
+compiledate.o -MD -MP -MF &quot;.deps/compiledate.Tpo&quot; -c -o compiledate.o 
+compiledate.c; \
+then mv -f &quot;.deps/compiledate.Tpo&quot; &quot;.deps/compiledate.Po&quot;; else rm -f 
+&quot;.deps/compiledate.Tpo&quot;; exit 1; fi
+gcc  -g -O2 -pipe -W -Wall -Wpointer-arith -Wstrict-prototypes 
+-Wno-unused-parameter -pthread  -o xastir  alert.o awk.o bulletin_gui.o 
+color.o datum.o db.o db_gis.o dbfawk.o draw_symbols.o fcc_data.o 
+festival.o geo-find.o geocoder_gui.o gps.o hashtable.o hashtable_itr.o 
+hostname.o igate.o interface.o interface_gui.o io-common.o io-mmap.o 
+lang.o list_gui.o locate_gui.o location.o location_gui.o main.o maps.o 
+map_cache.o map_dos.o map_gdal.o map_geo.o map_gnis.o map_pdb.o 
+map_shp.o map_tif.o map_tiger.o map_WMS.o messages.o messages_gui.o 
+objects.o popup_gui.o rac_data.o rotated.o rpl_malloc.o shp_hash.o 
+snprintf.o sound.o track_gui.o util.o view_message_gui.o wx.o wx_gui.o 
+x_spider.o xa_config.o compiledate.o -Lrtree -lrtree -Lshapelib -lshape 
+-lXm -lXt -lX11 -lintl -lrt -lXm -lXt -lXp -lXext -lm -lSM -lICE -lX11
+x_spider.o: In function `init_set_proc_title':
+/home/niall/xastir-1.9.1/src/x_spider.c:843: undefined reference to 
+`__progname_full'
+collect2: ld returned 1 exit status
+make[3]: *** [xastir] Error 1
+make[3]: Leaving directory `/home/niall/xastir-1.9.1/src'
+make[2]: *** [all-recursive] Error 1
+make[2]: Leaving directory `/home/niall/xastir-1.9.1/src'
+make[1]: *** [all-recursive] Error 1
+make[1]: Leaving directory `/home/niall/xastir-1.9.1'
+make: *** [all] Error 2
+$
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000016.html">[Delilinux-user] xastir ?
+</A></li>
+	<LI>Next message: <A HREF="000018.html">[Delilinux-user] xastir ? ... solved
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#17">[ date ]</a>
+              <a href="thread.html#17">[ thread ]</a>
+              <a href="subject.html#17">[ subject ]</a>
+              <a href="author.html#17">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/delilinux-user">More information about the Delilinux-user
+mailing list</a><br>
+</body></html>

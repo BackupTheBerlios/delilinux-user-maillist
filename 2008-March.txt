@@ -1,0 +1,27 @@
+From r.mcgillicuddy at gmail.com  Tue Mar 25 08:16:01 2008
+From: r.mcgillicuddy at gmail.com (Rose McGillicuddy)
+Date: Tue, 25 Mar 2008 19:16:01 +1200
+Subject: [Delilinux-user] make boot floppy
+Message-ID: <fad481630803250016l65d3e3bfy8f5d531532b3d9aa@mail.gmail.com>
+
+I downloaded the CD iso but it doesn't boot.  So I downloaded the boot, root
+and mod images to make floppies but the following command doesn't work.
+
+Output:
+[root at localhost Desktop]# dd if=deliboot.dsk of=/dev/fd0
+dd: writing to `/dev/fd0': Input/output error
+9+0 records in
+8+0 records out
+4096 bytes (4.1 kB) copied, 1.26894 seconds, 3.2 kB/s
+
+Doing dd --help gives a long list of options but I am not linux or computer
+enough savvy to understand them  Can anyone help please?  Many thanks
+
+-- 
+Registered Linux user #386597 http://counter.li.org/
+"The most beautiful thing in life we can experience is the mysterious. It is
+the source of all true science." Einstein
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/delilinux-user/attachments/20080325/31ca9507/attachment.html>
+

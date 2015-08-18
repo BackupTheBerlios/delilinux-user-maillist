@@ -1,0 +1,118 @@
+From damjandimitrioski at gmail.com  Sun Jan 10 12:28:25 2010
+From: damjandimitrioski at gmail.com (Damjan Dimitrioski)
+Date: Sun, 10 Jan 2010 12:28:25 +0100
+Subject: [Delilinux-user] Building in a Clean Chroot
+Message-ID: <1263122905.25653.13.camel@localhost.localdomain>
+
+Hi,
+
+I'm using ArchLinux on my computer, but recently I installed DeliLinux
+on my parents computer (which is ancient), now I want to be able to
+build packages in a clean chroot environment via my ArchLinux, reason
+for this is I can't use my ArchLinux packages on DeliLinux althought
+they're pacman compatible.
+(The errors are: file not found when I try to execute the binaries, e.g>
+-bash: /usr/bin/xarchiver: No such file or directory)
+
+So how to setup the clean chroot?
+This is what I do for ArchLinux>
+sudo mkarchroot <chrootdir>/root base base-devel sudo
+(http://wiki.archlinux.org/index.php/DeveloperWiki:Building_in_a_Clean_Chroot#Prerequisites)
+
+I think it should be like this>
+sudo mkarchroot -C <deli/pacman.conf> -M <deli/makepkg.conf>
+<chrootdir>/root current
+where deli is a folder with the custom conf files, am I correct ?
+
+-- 
+ Sincerely,
+ Damjan Dimitrioski.
+ 
+ -- 
+ Use GNU/Linux change your life.
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 198 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.berlios.de/pipermail/delilinux-user/attachments/20100110/c88fccd0/attachment.pgp>
+
+From luis.davila.pc at gmail.com  Sun Jan 10 22:01:17 2010
+From: luis.davila.pc at gmail.com (Luis Davila)
+Date: Sun, 10 Jan 2010 22:01:17 +0100
+Subject: [Delilinux-user] deli in virtualbox
+Message-ID: <201001102201.17567.luis.davila.pc@gmail.com>
+
+hi, I recently discovered DeliLinux.  I did install Deli 0.8.0  
+in an old laptop Toshiba 320 CDS Pentium MMX 233MHz 32MB ram, 
+all works fine (no so faster, it's normal, but I will try with 
+an oldest version too).  The only problem is with my pcmcia 
+wireless card (atheros chip)
+
+I would be make some test to make a PKGBUILD to easy install 
+atheros drivers (madwifi) (if that is possible) but in that 
+laptop take more time.... so.. I did install it in my Desktop PC 
+(archlinux) with VirtualBox but after install, when I rebooted  
+I have this message:
+"FATAL: no bootable medium found! System halted"
+
+somebody has an idea to this problem?
+
+thanks... 
+
+and it's really nice to discover this distribution for old 
+machines.. 
+
+Luis
+
+
+From luis.davila.pc at gmail.com  Mon Jan 11 09:02:11 2010
+From: luis.davila.pc at gmail.com (Luis Davila)
+Date: Mon, 11 Jan 2010 09:02:11 +0100
+Subject: [Delilinux-user] deli in virtualbox
+In-Reply-To: <201001102304.19620.luis.davila.pc@gmail.com>
+References: <201001102201.17567.luis.davila.pc@gmail.com>
+	<b02c40e91001101356o1d3295e7t1339eb94d703b4da@mail.gmail.com>
+	<201001102304.19620.luis.davila.pc@gmail.com>
+Message-ID: <201001110902.11500.luis.davila.pc@gmail.com>
+
+On Sunday 10 January 2010 23:04:19 Luis Davila wrote:
+> On Sunday 10 January 2010 22:56:20 you wrote:
+> > On Sun, Jan 10, 2010 at 4:01 PM, Luis Davila
+> 
+> <luis.davila.pc at gmail.com> wrote:
+> > > "FATAL: no bootable medium found! System 
+halted"
+> > > 
+> > > somebody has an idea to this problem?
+> > 
+> > I would suspect that the MBR on the drive doesn't 
+have a boot
+> 
+> loader
+> 
+> > installed.
+> 
+> hi, in the real laptop i didn't install lilo, 
+because I already
+> have installed grub (with tinycore).  I follow the 
+instruction
+> in the install process so probably a error in the 
+lilo's
+> installer? I will try boot with another CD image 
+inside
+> virtualbox..
+> thx for quickly idea..
+
+sorry :p I did it one mistake in the installation 
+process, I marked "root install" because I din't see 
+the third choise, MBR , I need it scrolldown on line 
+to see, really sorry..  Now all works fine, so i will 
+begin to play with PKGBUILDS.. almost i will try..
+
+thx again
+
+Luis
+
+

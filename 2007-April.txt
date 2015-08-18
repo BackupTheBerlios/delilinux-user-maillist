@@ -1,0 +1,144 @@
+From znnse at wagnertech.de  Mon Apr 16 22:40:47 2007
+From: znnse at wagnertech.de (Wagner Michael)
+Date: Mon, 16 Apr 2007 22:40:47 +0200
+Subject: [Delilinux-user] Problem writing the MBR
+In-Reply-To: <20070331141311.151830@gmx.net>
+References: <200703302323.23907.znnse@griesstaett>
+	<20070331141311.151830@gmx.net>
+Message-ID: <200704162240.47916.znnse@schlagzeug>
+
+Hello,
+
+here in detail. what i did:
+--
+LILO (linux Loader) is a generic boot loader. There's a simple
+installation which tries to automatically set up LILO to boot
+Linux (also Windows if found). For more advanced users, the 
+expert option offers more control over the installation
+process. Since LILO does not work in all cases (ald can damage
+partitions if incorrectly installed), there's the third (save)
+option, which is to skip installing LILO for now and you con 
+always install it later with the 'liloconfig' command.
+
+-> simple
+
+LILO can be installed to a variety of places:
+1) The superblock of your root Linux partition. (which could
+   be made the bootable partition with Windows or Linux fdisk, or
+   booted with a programm like OS/2 Boot Manager)
+2) A formatted floppy disk.
+3) The Master Boot record of your first hard drive.
+Options 1 and 2 are the safest, but option 1 does require a little
+extra work later (setting the partition bootable with fdisk).
+which option would you like?
+
+-> Root
+
+Sorry, but the attempt to install LILO has returned an
+error, so LILO has not been correctly instlalled. You'll 
+have to use a bootdisk to start your machine instead.
+It should still be possible to get LILO working by
+editing the /etc/lilo.conf and reinstalling LILO
+manually. See the LILO man page and documentation in
+/usr/doc/lilo for more help.
+--
+
+So, how can i boot this system and how can i try to
+make my disk bootable?
+
+Thanks for help,
+
+Michael.
+
+Am Samstag, 31. M?rz 2007 16:13 schrieben Sie:
+> Hello
+>
+> What do you mean by, you couldn't save the MBR?
+> Did it get overwritten again?
+>
+> I've heard of some BIOS which protect their MBR, 'cause it could be a virus
+> which deletes it..or something in that way. Take a look at the BIOS. You
+> could also use, I think it's called "SmartBoot" or something in that way.
+> It's a bootmanager on a floppy.
+>
+> Rob
+>
+>
+> -------- Original-Nachricht --------
+> Datum: Fri, 30 Mar 2007 23:23:23 +0200
+> Von: Michael Wagner <znnse at wagnertech.de>
+> An: delilinux-user at lists.berlios.de
+> Betreff: [Delilinux-user] Problem writing the MBR
+>
+> > Hello,
+> >
+> > up to now i installed DeLi on different machines. And it worked fine. But
+> > trying to install it on an old Siemens Mobile 360 i could not save the
+> > MBR.
+> > What can i try to do?
+> > Is there a possibility to boot the DiLi written to disk by another way
+> > (floppy)?
+> >
+> > Thanks for help!
+> >
+> > Michael.
+> > --
+> > Michael J.M. Wagner
+> > Gleiwitzer Str. 28
+> > 81929 M?nchen
+> >
+> > _______________________________________________
+> > Delilinux-user mailing list
+> > Delilinux-user at lists.berlios.de
+> > https://lists.berlios.de/mailman/listinfo/delilinux-user
+
+
+From scuol at lingua.it  Thu Apr 19 19:04:29 2007
+From: scuol at lingua.it (scuolalingua)
+Date: Thu, 19 Apr 2007 19:04:29 +0200
+Subject: [Delilinux-user] deli linux
+Message-ID: <002001c782a4$feaac3c0$df64fea9@ccpg576d>
+
+Salve,
+I am a newbie.
+I installed deli linux 7.1 on a pentium S (32Mb Ram, 2Gb HD) where windows 98 had already installed. I I reduced the partition for windows 98 and I created a swap linux partition on hda2 a 3 linux partitions at hda5, hda6, hda7 before installing deli linux. I installed deli linux in hda5 and Ichoosed not to create a swap partition (it was already created) then I was asked weather I would choose hda2 as swap partition: I confirmed. But deli linux does not recognise hda2 swap partition. When booting I read a line:
+'unable to find swap-space signature' and:
+'swapon: /dev/hda2: Invalid argument'
+
+Another problem is that when I run startx I can see only a tool bar in the bottom of a black screen (is that related with te above problem?) and the mouse does not work. I have a serial mouse on COM2. I tried xorgconfig and I choosed 'auto detect' and then /dev/ttyS1 but it does not work.
+
+Many thanks for help me and sorry for, possibly, stupid questions.
+Giuseppe
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/delilinux-user/attachments/20070419/d6fa3eea/attachment.html>
+
+From scuol at lingua.it  Fri Apr 20 19:42:50 2007
+From: scuol at lingua.it (scuolalingua)
+Date: Fri, 20 Apr 2007 19:42:50 +0200
+Subject: [Delilinux-user] salve
+Message-ID: <000e01c78373$546c2640$df64fea9@ccpg576d>
+
+Salve,
+I am a newbie.
+I installed deli linux on a pentium S (32 Mb RAM, on a 350 Mb linux partition) with also windows 98. 
+I setup tiny X but the mouse does not work. I have a serial mouse (2 buttons) on COM2. I read the instructions 
+in your mailing list about a similar problem: I changed xorgconfig according to my mouse type and adding /dev/ttyS1.
+When I startx the mouse does not work. 
+I also did (according to your list on a similar problem):
+
+cd /usr/bin
+cp X X.old
+rm X
+ln -s /usr/bin/Xorg X
+
+then I ran xorgconfig putting /dev/ttyS1 and I started Xorg: the mouse worked but the I had half black screen without toolbar. 
+Also when I startx there was an error and it did not work. So I set up again Tiny X: the screen works but the mouse still does not work.
+
+Could someone help me I would be very grateful. 
+Thank you for help.
+Giuseppe
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/delilinux-user/attachments/20070420/92aebae5/attachment.html>
+

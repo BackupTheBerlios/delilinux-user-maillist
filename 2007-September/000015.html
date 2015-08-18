@@ -1,0 +1,324 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Delilinux-user] How do I add support for ISA modem?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/delilinux-user/2007-September/index.html" >
+   <LINK REL="made" HREF="mailto:delilinux-user%40lists.berlios.de?Subject=Re%3A%20%5BDelilinux-user%5D%20How%20do%20I%20add%20support%20for%20ISA%20modem%3F&In-Reply-To=%3C263444.66897.qm%40web54503.mail.re2.yahoo.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Delilinux-user] How do I add support for ISA modem?</H1>
+    <B>Shuo Chen</B> 
+    <A HREF="mailto:delilinux-user%40lists.berlios.de?Subject=Re%3A%20%5BDelilinux-user%5D%20How%20do%20I%20add%20support%20for%20ISA%20modem%3F&In-Reply-To=%3C263444.66897.qm%40web54503.mail.re2.yahoo.com%3E"
+       TITLE="[Delilinux-user] How do I add support for ISA modem?">shuo45241 at yahoo.com
+       </A><BR>
+    <I>Mon Sep  3 07:17:39 CEST 2007</I>
+    <P><UL>
+        
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15">[ date ]</a>
+              <a href="thread.html#15">[ thread ]</a>
+              <a href="subject.html#15">[ subject ]</a>
+              <a href="author.html#15">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I want to use DeLi Linux on a Packard Bell computer. I
+got it to install fine. But what good is it if I can't
+connect to the Internet? I want to use the internal
+modem. I think it is ISA. How do I get it to detect
+it?  Is there even a driver for such a old WinModem? I
+tried pnpdump but it didn't work. I also tried the
+wvdialconf command written below, but DeLi Linux
+doesn't seem to have this command yet. And the
+scanModem.gz seemed to hang after a grep command to
+the screen and complained about an old device.
+Modem.txt still printed out though. Please see below
+for my modem model. I heard I should also run
+isapnptools and use a &quot;set&quot; command to explicitly
+state the COM and IRQ, but am not sure how to do that.
+
+Sorry about the length of my post.
+
+Shuo
+
+-----------------------------
+ORIGINAL MESSAGE FROM <A HREF="https://lists.berlios.de/mailman/listinfo/delilinux-user">DISCUSS at linmodems.org</A>
+
+
+Shuo
+
+RE: Packard Bell 14.4AM(SP) Modem Soundcard.
+Identifier: GVC_Modem18
+This is quote old hardware, with possible an old
+Controller Chipset
+ modem
+
+If wvdial is installed on your System, try modem
+detection with
+$ su - root
+# wvdialconf  /etc/wvdial.conf
+
+If not you can try interrogating the /dev/ttyS0 to 3
+ports with
+whatever COMM tooles are provided in DeLi  Linux
+
+MarvS
+scanModem maintainer
+
+On 9/1/07, Shuo Chen &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/delilinux-user">shuo45241 at yahoo.com</A>&gt; wrote:
+&gt;<i> This is my first report. Can I use my modem with
+</I>DeLi
+&gt;<i> Linux? See below:
+</I>&gt;<i>
+</I>&gt;<i>  Only plain text email is forwarded by the
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/delilinux-user">DISCUSS at linmodems.org</A> List Server.
+</I>&gt;<i>  Do use the following as the email Subject Line:
+</I>&gt;<i>            SomeName, YourCountry This is DeLi Linux
+</I>&gt;<i> 0.7.2 beta ( kernel 2.4.34.4
+</I>&gt;<i>  This will alert cogent experts, and  distinguish
+</I>&gt;<i> cases in the Archives.
+</I>&gt;<i>  YourCountry will enable Country Code guidance.
+</I>&gt;<i>  Occassionally responses are blocked by an Internet
+</I>&gt;<i> Provider mail filters.
+</I>&gt;<i>  So in a day, also check the Archived responses at
+</I>&gt;<i> <A HREF="http://www.linmodems.org">http://www.linmodems.org</A> .
+</I>&gt;<i>  Local Linux experts can be found through:
+</I>&gt;<i> <A HREF="http://www.linux.org/groups/index.html">http://www.linux.org/groups/index.html</A>
+</I>&gt;<i> --------------------------  System information
+</I>&gt;<i> ----------------------------
+</I>&gt;<i> CPU=i586,  This is DeLi Linux 0.7.2 beta (
+</I>&gt;<i> Linux version 2.4.34.4 (<A HREF="https://lists.berlios.de/mailman/listinfo/delilinux-user">root at deli</A>) (gcc version
+</I>3.3.6)
+&gt;<i> #1 Mon Mai 7 14:43:42 UTC 2007
+</I>&gt;<i>  scanModem update of:  2007_August_28
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>  There are no blacklisted modem drivers in
+</I>&gt;<i> /etc/modprobe*  files
+</I>&gt;<i>    /proc/bus/usb/devices file not present, barring
+</I>USB
+&gt;<i> modem query.
+</I>&gt;<i>
+</I>&gt;<i> Modem or candidate host audio card have firmware
+</I>&gt;<i> information and diagnostics:
+</I>&gt;<i>
+</I>&gt;<i>  === Finished modem firmware and bootup diagnostics
+</I>&gt;<i> section. ===
+</I>&gt;<i>  === Next deducing cogent software ===
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>         A modem was not detected among the PCI
+</I>devices:
+&gt;<i> ------------------------------------------------
+</I>&gt;<i> 00:08.0 VGA compatible controller: Cirrus Logic GD
+</I>&gt;<i> 5430/40 [Alpine] (rev 47)
+</I>&gt;<i> ------------------------------------------------
+</I>&gt;<i>  with USB and bridge devices not displayed.
+</I>&gt;<i>  Please provide any independent information
+</I>available
+&gt;<i> on your modem.
+</I>&gt;<i>
+</I>&gt;<i>         If your modem is mounted on an ISA card,
+</I>scanModem
+&gt;<i> could not access it.
+</I>&gt;<i>         If an alternative boot into Microsoft
+</I>windows can be
+&gt;<i> done, do mouse
+</I>&gt;<i> clicks on:
+</I>&gt;<i>    Start &gt; Settings &gt; Control Panel &gt; Classical View
+</I>&gt;<i> (for Window XP) &gt; System
+</I>&gt;<i> &gt; Hardware &gt; Device Manager &gt; Modems &gt; Click on the
+</I>+
+&gt;<i> &gt; Modem. Double click to
+</I>&gt;<i> expand the graphic. Manufacturer information may be
+</I>&gt;<i> displayed. For example, CXT
+</I>&gt;<i> stands for Conexant. Click the Diagnostics Tab.
+</I>Record
+&gt;<i> any hardware ID or vendor
+</I>&gt;<i> and device information.
+</I>&gt;<i> Next do the Query Modem and record the ATI
+</I>&gt;<i> specifications displayed such as:
+</I>&gt;<i>     ATI3 - Agere SoftModem Version 2.1.22
+</I>&gt;<i>     ATI5 - 2.1.22, AMR Intel MB, AC97 ID:SIL
+</I>REV:0x27
+&gt;<i> Try to identify the modem setup file, with name
+</I>&gt;<i> perhaps MODEM.INF.
+</I>&gt;<i> If may contain chipset Vendor informaton.
+</I>&gt;<i>
+</I>&gt;<i>  Completed candidate modem analyses.
+</I>&gt;<i>
+</I>&gt;<i>  A UDEV device file system is not active.
+</I>&gt;<i>
+</I>&gt;<i>  Versions adequately match for the compiler
+</I>installed:
+&gt;<i> 3.3.6
+</I>&gt;<i>              and the compiler used in kernel
+</I>assembly:
+&gt;<i> 3.3.6
+</I>&gt;<i>
+</I>&gt;<i>  linux-headers-2.4.34.4 resources needed for
+</I>compiling
+&gt;<i> are not manifestly ready!
+</I>&gt;<i>
+</I>&gt;<i>  If compiling is necessary packages must be
+</I>installed,
+&gt;<i> providing:
+</I>&gt;<i>          kernel-source-2.4.34.4
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> If a driver compilation files with message including
+</I>&gt;<i> some lack of some FileName.h (stdio.h for example.
+</I>&gt;<i> Some additional kernel-header files need
+</I>installation
+&gt;<i> to /usr/include.
+</I>&gt;<i> For Debian/Ubuntu related distributions, run the
+</I>&gt;<i> following command to display the needed package
+</I>list:
+&gt;<i> $ sudo apt-get -s install linux-kernel-devel
+</I>&gt;<i> While some of the files may be on the install CD,
+</I>&gt;<i> others may have to be found through
+</I>&gt;<i> <A HREF="http://packages.ubuntu.com">http://packages.ubuntu.com</A>
+</I>&gt;<i>
+</I>&gt;<i> For Ubuntu Feisty, additional packages required
+</I>were:
+&gt;<i>  libc6-dev linux-libc-dev
+</I>&gt;<i> available through <A HREF="http://packages.ubuntu.com/">http://packages.ubuntu.com/</A> , if
+</I>not
+&gt;<i> on the install CD.
+</I>&gt;<i> Such packages may have different names for other
+</I>Linux
+&gt;<i> distributions.
+</I>&gt;<i> Try installing just the libc6-dev, then test the
+</I>&gt;<i> compile again.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Checking pppd properties:
+</I>&gt;<i>         -rwxr-xr-x 1 root root 224880 2006-09-14
+</I>21:58
+&gt;<i> /usr/sbin/pppd
+</I>&gt;<i>
+</I>&gt;<i> In case of an &quot;error 17&quot; &quot;serial loopback&quot; problem,
+</I>&gt;<i> see:
+</I>&gt;<i>
+</I>&gt;<i>
+</I><A HREF="http://phep2.technion.ac.il/linmodems/archive-sixth/msg02637.html">http://phep2.technion.ac.il/linmodems/archive-sixth/msg02637.html</A>
+&gt;<i>
+</I>&gt;<i> To enable dialout without Root permission do:
+</I>&gt;<i>         $ su - root  (not for Ubuntu)
+</I>&gt;<i>          chmod a+x /usr/sbin/pppd
+</I>&gt;<i> or under Ubuntu related Linuxes
+</I>&gt;<i>          chmod a+x /usr/sbin/pppd
+</I>&gt;<i>
+</I>&gt;<i> Checking settings of:   /etc/ppp/options
+</I>&gt;<i> lock
+</I>&gt;<i> defaultroute
+</I>&gt;<i> noipdefault
+</I>&gt;<i> modem
+</I>&gt;<i> usepeerdns
+</I>&gt;<i> /dev/ttyS1
+</I>&gt;<i> 115200
+</I>&gt;<i> crtscts
+</I>&gt;<i> debug
+</I>&gt;<i> passive
+</I>&gt;<i> asyncmap 0
+</I>&gt;<i>
+</I>&gt;<i> In case of a message like:
+</I>&gt;<i>    Warning: Could not modify /etc/ppp/pap-secrets:
+</I>&gt;<i> Permission denied
+</I>&gt;<i> see
+</I>&gt;<i>
+</I><A HREF="http://linmodems.technion.ac.il/bigarch/archive-sixth/msg04656.html">http://linmodems.technion.ac.il/bigarch/archive-sixth/msg04656.html</A>
+&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>  Don't worry about the following, it is for the
+</I>&gt;<i> experts
+</I>&gt;<i>  should trouble shooting be necessary.
+</I>&gt;<i>
+</I>==========================================================
+&gt;<i>
+</I>&gt;<i> Windows 95 Diagnostics Report:
+</I>&gt;<i>
+</I>&gt;<i> Port Information
+</I>Port: COM1
+Interrupt: 4
+Address: 3F8
+&gt;<i> UART: NFS 16550AN
+</I>&gt;<i> Highest Speed: 115K Baud
+</I>&gt;<i>
+</I>&gt;<i> Packard Bell 14.4AM(SP) Modem Soundcard
+</I>&gt;<i> Identifier: GVC_Modem18
+</I>&gt;<i> COMMAND         RESPONSE
+</I>&gt;<i> ATI1            255
+</I>&gt;<i> ATI2            OK
+</I>&gt;<i> ATI3            v2.200E-ACF/ATF_DP Rockwell RPI(TM)
+</I>&gt;<i>
+</I>&gt;<i> MODEM+01
+</I>&gt;<i>
+</I>&gt;<i> ATI4            a007880284C6002F
+</I>&gt;<i> ATI4            bC60000000
+</I>&gt;<i> ATI4            r1005111151012004
+</I>&gt;<i> ATI4            r3000111170000000
+</I>&gt;<i> ATI5            022
+</I>&gt;<i> ATI6            RCV144DPG Rev
+</I>&gt;<i> ATI7            000
+</I>&gt;<i> ATI+FCLASS=?    0,1,80
+</I>&gt;<i>
+</I>&gt;<i> --------------------------------
+</I>&gt;<i>
+</I>&gt;<i> Written on the Board
+</I>&gt;<i> RCV244ACF-P
+</I>&gt;<i> Rockwell 95
+</I>&gt;<i> R6725-11
+</I>&gt;<i> 9546 A78959-3
+</I>&gt;<i> Mexico
+</I>&gt;<i>
+</I>&gt;<i> ANALOG DEVICES
+</I>&gt;<i> AD1845JP
+</I>&gt;<i> SoundPort
+</I>&gt;<i> 9548
+</I>&gt;<i> 25324280
+</I>&gt;<i>
+</I>&gt;<i> AZTECH
+</I>&gt;<i> AT2316R
+</I>&gt;<i> AZTECH SYSTEMS
+</I>&gt;<i> R2
+</I>&gt;<i> 5360
+</I>
+
+       
+____________________________________________________________________________________
+Looking for a deal? Find great prices on flights and hotels with Yahoo! FareChase.
+<A HREF="http://farechase.yahoo.com/">http://farechase.yahoo.com/</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15">[ date ]</a>
+              <a href="thread.html#15">[ thread ]</a>
+              <a href="subject.html#15">[ subject ]</a>
+              <a href="author.html#15">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/delilinux-user">More information about the Delilinux-user
+mailing list</a><br>
+</body></html>
